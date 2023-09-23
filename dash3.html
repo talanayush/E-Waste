@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map Page</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://www.bing.com/api/maps/mapcontrol?callback=initializeMap&key=Akj9lWVlXHAaPXZFYAV0PMIp5QWMEd752OuexkY-6h2VrLsQXudjsJ2Sjmlj0Y-s" async defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style2.css">
+     
+</head>
+<body>
+    <script src="dashboard.js"> </script>
+
+    
+    <div id = "mainBody" class="mainb">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">E-waste Management</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <div class="collapse navbar-collapse " id="navbarNavDropdown">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html" id="home-link">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    
+                  <a class="nav-link" href="#" id="locate-link"><i class="fa-solid fa-location-dot"></i>  Locate Nearby Center</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="profile-link"><i class="fa-regular fa-user"></i>  Your Profile</a>
+                </li>
+              </ul> -->
+            </div>
+        </nav>
+       
+        <div id = "leftPanel">
+          <!-- <input type="text" id="detectLocationInput" placeholder="Enter location for detection" class="form-control mb-2"> -->
+          <div class="card">
+            <div class="container">
+              <h4><b>Detect Location</b></h4>
+              <button class ="btn1">START</button>
+              <p id = "coord"></p>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="container">
+              <h4><b>Find Nearby Centres</b></h4>
+            <!-- <input type="text" id="findNearbyInput" placeholder="Enter location for nearby centers" class="form-control mb-2"> -->
+            <button class="btn1">START</button>
+            <div id = "locations" class="res"></div>
+          </div>
+        </div>
+        </div>
+        <div id = "rightPanel">
+            <button id="map">
+                <img src = "ewasteMap.jpg">
+            </button>
+        </div>
+    
+</body>
+</html>

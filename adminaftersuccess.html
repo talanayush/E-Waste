@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIH</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script
+      src="https://kit.fontawesome.com/280f5d0d38.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" >
+    <style>
+      .admin-tab, 
+.admin-tab1{
+  width: 90%;
+  margin: 5% auto;
+  
+}
+.admin-tab-container,
+.admin-tab-container1{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.admin-tab-col,
+.admin-tab-col1{
+  width: 40%;
+  margin: auto;
+ 
+}
+.admin-tab-col img,
+.admin-tab-col1 img{
+  width: 100%;
+}
+.admin-tab-col h1,
+.admin-tab-col1 h1{
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 2.5rem;
+ 
+}
+.admin-tab-col p,
+.admin-tab-col1 p{
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+}
+.admin-tab-col button,
+.admin-tab-col1 button{
+  margin: 20px 0;
+  padding: 15px 10px;
+  background-color: #004225 ;
+  background-image: linear-gradient(315deg, #004225 0%, #618264 74%);
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+.admin-tab-col button:hover,
+.admin-tab-col1 button:hover{
+  opacity: 0.7;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">E-Waste Management</a>
+    </nav>
+   <!-- <div class="row" style="text-align:center">
+    <h2>Admin Page</h2>
+
+   </div> -->
+    <section id="admin-tab" class="admin-tab1">
+        <div class="admin-tab-container1">
+          <div
+            class="admin-tab-col1"
+            data-aos="fade-right"
+            data-aos-easing="ease"
+            data-aos-duration="1000"
+          >
+            <img src="img.jpg" alt="User's Incentives" />
+          </div>
+          <div
+            class="admin-tab-col1"
+            data-aos="fade-up"
+            data-aos-easing="ease"
+            data-aos-duration="1000"
+          >
+            <h1>Admin's Panel</h1>
+            <form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="username">User's id</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="incentives">Incentives for devices contributed<i class="fa-solid fa-coins" style="color:#FFBB5C"></i> </label>
+                    <input type="number" class="form-control" id="incentives" placeholder="Enter incentives score" required>
+                </div>
+                <button onclick="">
+                    Confirm
+                  </button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+</body>
+</html>
