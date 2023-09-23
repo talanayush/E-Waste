@@ -31,6 +31,13 @@
             margin-bottom: 10px;
         }
     </style>
+
+<script>
+    function redirectToDashboard() {
+        window.location.href = "dash.html";
+    }
+</script>
+
 </head>
 <body>
     <div class="container mx-auto">
@@ -46,12 +53,14 @@
 
         <a class="adminLink" href="admincr.html">Admin Login</a>
 
+        
+
         <div class="tab-content">
             <!-- Login Tab -->
-            <div class="tab-pane fade show active" id="login-tab">
+            <div class="tab-pane fade show active">
                 <div class="card-body">
                     <h2>Login</h2>
-                    <form name = "loginForm">
+                    <form name = "loginForm" id = "loginForm">
                         <div class="form-group">
                             <label for="login-username-email">Username/Email</label>
                             <input type="text" class="form-control" id="login-username-email" name = "login-username-email" placeholder="Enter username/email" required>
@@ -60,7 +69,7 @@
                             <label for="login-password">Password</label>
                             <input type="password" class="form-control" id="login-password" name = "login-password" placeholder="Enter password" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <a href="dash.html" class="btn btn-primary btn-login"><i class="fab fa-facebook"></i> Submit</a>
                     </form>
                 </div>
             </div>
