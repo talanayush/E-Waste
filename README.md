@@ -1,7 +1,7 @@
 # E-Waste management
 SIH internal hackathon repository
 
-Use **landing.html** to start the website.
+**NOTE :** Use **landing.html** to start the website.
 
 **Implementation Approach:**
 
