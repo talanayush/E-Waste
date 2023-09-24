@@ -23,7 +23,7 @@ router.use(express.urlencoded({ extended: true }));
 router.post('/submit', async (req, res) => {
   const n = req.body["signup-name"];
   const ph = req.body["signup-phone"];
-  const add = req.body["signup-address"];
+  // const add = req.body["signup-address"];
   const em = req.body["signup-email"];
   const usern = req.body["signup-username"];
   const passw = req.body["signup-password"];
@@ -32,7 +32,7 @@ router.post('/submit', async (req, res) => {
   const newUser = {
     name: n,
     phone: ph,
-    address: add,
+    // address: add,
     email: em,
     username: usern,
     password: passw,
@@ -97,7 +97,7 @@ router.get('/deviceEval', (req, res) => {
 });
 
 router.get('/login', (req,res) => {
-  res.sendFile(__dirname + '/views/pages/loginUser.html');
+  res.sendFile(__dirname + '/views/pages/login3.html');
 });
 
 router.get('/offers', (req,res) => {
@@ -130,7 +130,7 @@ router.post('/login', async (req, res) => {
       // User exists and password is correct
       
       console.log('Redirect');
-      res.redirect('/dashboard');
+      res.redirect('/success');
       console.log('Success');
     } else {
       // User doesn't exist or password is incorrect
