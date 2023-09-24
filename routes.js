@@ -130,7 +130,7 @@ router.post('/login', async (req, res) => {
       // User exists and password is correct
       
       console.log('Redirect');
-      res.redirect('/dashboard');
+      res.redirect('/success');
       console.log('Success');
     } else {
       // User doesn't exist or password is incorrect
