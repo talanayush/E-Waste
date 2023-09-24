@@ -59,6 +59,43 @@ router.get('/dashboard', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/pages/dashboard.html'));
 });
 
+function calculateExpectedPrice(deviceType, deviceYear, mrp) {
+  depRates = {
+    "smartphone": 0.2,
+    "tv": 0.4,
+    "tablet" : 0.275,
+    "refrigerator": 0.1,
+    "ac" : 0.15,
+    "laptop" : 0.25
+  }
+
+  const currentYear = new Date().getFullYear();
+  const age = currentYear - deviceYear;
+  const depreciationRate = depRates[deviceType];
+  const expectedPrice = mrp * Math.pow(1 - depreciationRate, age);
+
+  console.log('Dep rate : ', depreciationRate)
+  
+  return expectedPrice;
+}
+
+router.post('/expectedPrice', async (req, res) => {
+  const modelNo = req.body['modelNo'];
+  const deviceYear = req.body['deviceYear'];
+  const deviceType = req.body['deviceType'];
+  const mrp = req.body['mrp'];
+
+  const expectedPrice = calculateExpectedPrice(deviceType, deviceYear, mrp);
+
+  console.log(expectedPrice);
+  res.json({ expectedPrice });
+});
+
+router.get('/deviceEval', (req, res) => {
+  // Serve the 'dashboard.html' file
+  res.sendFile(path.join(__dirname, '/views/pages/deviceEval.html'));
+});
+
 router.get('/login', (req,res) => {
   res.sendFile(__dirname + '/views/pages/loginUser.html');
 });
