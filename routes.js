@@ -172,7 +172,7 @@ router.post('/login', async (req, res) => {
 // });
 
 router.get('/loginad', async (req, res) => {
-  res.sendFile(__dirname + '/views/pages/loginadmin.html');
+  res.sendFile(__dirname + '/views/pages/admin-login.html');
 }
 );
 router.get('/givecredit', (req,res) => {
