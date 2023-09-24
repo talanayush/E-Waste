@@ -207,18 +207,20 @@ router.post('/admin', async (req, res) => {
     const user = await collections.findOne({ username });
 
     if (!user) {
-      return res.send('User not found');
+      return res.status(404).json({error: 'User not found'});
     }
-    //parsing check
     
     // Update the user's credits
     user.incentive += parseInt(credit, 10);
     await collections.updateOne({ username }, { $set: user });
+    console.log('Redirect');
+    res.redirect('/admin');
+    console.log('Success');
 
-    res.send(`Credits updated successfully for ${user.username}. New credits: ${user.incentive}`);
+    // res.send(`Credits updated successfully for ${user.username}. New credits: ${user.incentive}`);
   } catch (error) {
     console.error(error);
-    res.status(500).send('Internal Server Error');
+    res.status(500).json({error: 'Internal Server Error'});
   }
 });
 
