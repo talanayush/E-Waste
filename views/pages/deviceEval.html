@@ -132,8 +132,38 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Calculate Credit Points</button>
                 </form>
+                <div id = "result">
+                    <br>
+                </div>
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('priceForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const modelNo = document.getElementById('modelNumber').value;
+            const deviceyear = document.getElementById('deviceYear').value;
+            const devicetype = document.getElementById('deviceType').value;
+            const price = document.getElementById('mrp').value;
+
+            depRates = {
+             "smartphone": 0.2,
+             "tv": 0.4,
+             "tablet" : 0.275,
+             "refrigerator": 0.1,
+             "ac" : 0.15,
+            "laptop" : 0.25
+             }
+
+             const currentYear = new Date().getFullYear();
+            const age = currentYear - deviceyear;
+            const depreciationRate = depRates[devicetype];
+            const expectedPrice = price * Math.pow(1 - depreciationRate, age);
+
+            //console.log(`Dep rate :  ${depreciationRate}`)
+             document.getElementById('result').innerHTML = `Expected price is: ${expectedPrice}`;
+            // return expectedPrice;
+        });
+    </script>
 </body>
 </html>
