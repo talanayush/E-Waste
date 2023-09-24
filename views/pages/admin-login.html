@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Add Poppins font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card {
+            width: 400px;
+            border-radius: 16px; /* Rounded corners for the card */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+        }
+
+        .nav-tabs {
+            border: none; /* Remove the border around tabs */
+            border-radius: 16px 16px 0 0; /* Rounded corners for the top of the tabs */
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            border-radius: 0; /* Remove the default border-radius on tab links */
+            cursor: pointer;
+            font-weight: bold;
+            padding: 10px 20px; /* Increase the padding to make tabs larger */
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .tab-content {
+            padding: 20px;
+            margin-top: 20px; /* Added margin to create space between tabs and card */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .owner{
+            margin-top: 3rem;
+            font-size: smaller;
+            
+        }
+        .ownership{
+            text-align: center;
+        }
+        .icon{
+            display: flex;
+            justify-content: center;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="card">
+        
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <div class="icon">
+                    <i class="fa-solid fa-user fa-5x"></i>
+                </div>
+                <h2 class="text-center">Admin Login</h2>
+                <form action="/loginad" method="post">
+                    <div class="form-group">
+                        <label for="username">Email:</label>
+                        <input type="text" id="username" name="admin_email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="admin_password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+            <div class="ownership">
+                <p class="owner">Not an Admin? User <a href="/login">Log In</a></a> here</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

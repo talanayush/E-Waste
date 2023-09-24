@@ -9,10 +9,11 @@
     <script src="https://www.bing.com/api/maps/mapcontrol?callback=initializeMap&key=Akj9lWVlXHAaPXZFYAV0PMIp5QWMEd752OuexkY-6h2VrLsQXudjsJ2Sjmlj0Y-s" async defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
 
     <style>
-      #map {
+        #map {
+            padding-top: 2%;
             top: 0px;
             width: 100%;
             height: 500px;
@@ -29,12 +30,13 @@
             width: 100%;
         }
 
-        #leftPanel{
-            display: inline-block; /* or float: left; */
+        #leftPanel {
+            display: inline-block;
             width: 45%;
             box-sizing: border-box;
-            padding: 10px; 
-            height:100%;
+            padding: 10px;
+            vertical-align: top; /* Align all items to the top */
+            height: 100%;
         }
 
         .navbar-brand{
@@ -160,11 +162,12 @@
             width: 2rem;
             margin-bottom: 1rem;
         }
-        body {
+        /* body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
             border: border-box;
-        }
+        } */
+
         /* body{
             background-image: url("bgimg.jpg");
             background-repeat: no-repeat;
@@ -173,25 +176,26 @@
                 background-color: rgba(0,0,0,0.8);
             }
         } */
-        body{
-        height: 100vh;
-          width: 100%;
+
+        /* body{ */
+        /* height: 100vh;
+          width: 100%; */
           /* display: flex;
           align-items: center;
           justify-content: center; */
-          background-image: url('bg2.jpg');
-          background-size: cover;
-          &::before {
+          /* background-image: url('bg2.jpg'); */
+          /* background-size: cover; */
+          /* &::before {
             content: "";
             position: absolute;
             top: 0px;
             right: 0px;
             bottom: 0px;
-            left: 0px;
+            left: 0px; */
             /* //background-color: rgba(0,0,0,0.25); */
-            background-color: rgba(0,0,0,0.3);
-          }
-        }
+            /* background-color: rgba(0,0,0,0.3); */
+          /* } */
+        /* } */
 
         .btn1 {
           background-color: #2ea44f;
@@ -204,8 +208,8 @@
           display: inline-block;
           font-size: 14px;
           font-weight: 600;
-          line-height: 20px;
-          padding: 6px 16px;
+          line-height: 25px;
+          padding: 6px 12px;
           position: relative;
           text-align: center;
           text-decoration: none;
@@ -213,6 +217,7 @@
           -webkit-user-select: none;
           touch-action: manipulation;
           vertical-align: middle;
+          margin: 5px;
         }
 
         .btn1:hover {
@@ -237,7 +242,7 @@
         }
 
         .card{
-            background-color: #CCC8AA;
+            background-color: #94d3a2;
             /* box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2); */
             margin-bottom: 3%;
             padding-bottom: 5%;
@@ -254,7 +259,38 @@
         }
 
         .container {
-        padding: 2px 16px;
+          padding: 2px 16px;
+        }
+
+        .scrollable{
+            width: 300px; /* Set the desired width */
+            height: 200px; /* Set the desired height */
+            overflow: auto; /* Add a scrollbar when content overflows */
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            height: 8vh; /* Adjust this value as needed */
+            margin-left: 12px;
+        }
+
+        /* Style the search input */
+        #search {
+            padding: 7px;
+            font-size: 16px;
+            border: 1px solid grey;
+            border-radius: 5px;
+            outline: none; /* Remove the default input focus outline */
+            margin-right: 10px; /* Add spacing between input and button */
+        }
+
+        #LocationListID{
+          color: #2c974b;
+          list-style: none;
         }
       </style>
      
@@ -275,8 +311,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/success" id="home-link">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                
+            <li class="nav-item"> 
               <a class="nav-link" href="/dashboard" id="locate-link"><i class="fa-solid fa-location-dot"></i>  Locate Nearby Center</a>
             </li>
             <li class="nav-item">
@@ -290,8 +325,11 @@
           <!-- <input type="text" id="detectLocationInput" placeholder="Enter location for detection" class="form-control mb-2"> -->
           <div class="card">
             <div class="container">
-              <h4><b>Detect Location</b></h4>
-              <button onclick="detectLocation()" class ="btn1">START</button>
+              <h4><b>Search</b></h4>
+              <input type="text" id="search" placeholder="Enter your location">
+              <button class="btn1">Search</button>
+              <button onclick="detectLocation()" class ="btn1">Detect Location</button>
+              
               <p id = "coord"></p>
             </div>
           </div>
@@ -300,14 +338,15 @@
             <div class="container">
               <h4><b>Find Nearby Centres</b></h4>
             <!-- <input type="text" id="findNearbyInput" placeholder="Enter location for nearby centers" class="form-control mb-2"> -->
-            <button onclick="findNearby()" class="btn1">START</button>
-            <div id = "locations" class="res"></div>
+              <button onclick="findNearby()" class="btn1">Find Centres Near You</button>
+              <div id = 'scrollable'>
+              <div id = "locations" class="res"></div></div>
+            </div>
           </div>
-        </div>
         </div>
         <div id = "rightPanel">
             <button id="map" onclick="loadMapScenario()"></button>
-          </div>
+        </div>
     
 </body>
 </html>

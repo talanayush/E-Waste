@@ -64,8 +64,27 @@ function insertIntoTable(data) {
   divi.innerHTML = "";
   var outerList = document.createElement("ul");
 
+  console.log(data);
+
   for (var i = 0; i < data.length; i++) {
       var innerList = document.createElement("ul");
+
+      // var listItem1 = document.createElement("li");
+      // listItem1.textContent = data[i][0];
+
+      // var listItem2 = document.createElement("li");
+      // listItem2.textContent = data[i][1];
+
+      // var listItem3 = document.createElement("li");
+      // listItem3.textContent = data[i][2];
+
+      // var listItem4 = document.createElement("a");
+      // listItem4.textContent = data[i][3];
+
+      // innerList.appendChild(listItem3);
+      // innerList.appendChild(listItem1);
+      // innerList.appendChild(listItem2);
+      // innerList.appendChild(listItem4);
 
       for (var j = 0; j < data[i].length; j++) {
           var listItem = document.createElement("li");
@@ -90,8 +109,6 @@ function insertIntoTable(data) {
   divi.appendChild(outerList); // Add the outer list to the div element.
 }
 
-
-
 function loadMapScenario() {
     initializeMap();
 
@@ -114,7 +131,7 @@ function loadMapScenario() {
 function organizeResponseAndPushpin(response){
   var result = [];
   for(let a = 0; a < response.length; ++a){
-    result.push([response[a]['lat'], response[a]['long'], response[a]['centre'], response[a]['gmapLink']]);
+    result.push(response[a]['centre'], [response[a]['lat'], response[a]['long'], response[a]['gmapLink']]);
   }
   centreCoordinates = result;
   console.log('From internal : ', result);
