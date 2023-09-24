@@ -5,7 +5,7 @@ body {
     border: border-box;
 }
 .container {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 50px;
     background-image: linear-gradient( rgb(189, 210, 189));
@@ -156,8 +156,6 @@ body {
     transition-timing-function: ease;
 }
 .page-3-in:hover{
-    background-image: radial-gradient(rgb(189, 230, 189),rgb(12, 180, 9));
-    border-radius: 30px;
     transform: scale(1.05);
 }
 .page-3-text{
@@ -188,8 +186,6 @@ img{
     transition-timing-function: linear;
 }
 .tt:hover{
-    background-image: radial-gradient(rgb(189, 230, 189),rgb(12, 180, 9));
-    border-radius: 30px;
     transform: scale(1.05);
 }
 .end-page{
