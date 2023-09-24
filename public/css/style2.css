@@ -1,0 +1,251 @@
+#rightPanel{
+    display: inline-block; 
+    width: 50%; 
+    box-sizing: border-box; 
+    padding: 10px;
+    height: 100%;
+    z-index: 5;
+}
+
+#map {
+    top: 0px;
+    width: 100%;
+    height: 500px;
+    z-index: 5;
+}
+
+#Navbar{
+    width: 100%;
+    height: 75px;
+    background-color: red;
+}
+
+#mainBody{
+    display: contents;
+    width: 100%;
+}
+
+#leftPanel{
+    display: inline-block; /* or float: left; */
+    width: 45%;
+    box-sizing: border-box;
+    padding: 10px; 
+    height:100%;
+}
+
+.navbar-brand{
+    padding-left: 2%;
+}
+
+.navbar{
+    height: 4rem;
+    background-color: #283331;
+    color: white;
+}
+.navbar-nav .nav-link.active,.navbar-nav .nav-link:hover {
+    text-decoration: underline;
+}
+
+.logo-img{
+    height: 5rem;
+    width: 5rem;
+}
+.border{
+    border: 2px solid transparent;
+}
+.border:hover{
+    border: 2px solid white;
+}
+.nav-item{
+    padding-left: 3rem;
+    padding-right: 3rem;
+    
+}
+.row{
+    padding-top: 2rem;
+}
+.heading{
+    padding-top: 2rem;
+    text-align: center;
+}
+.e-waste{
+    height: 100%;
+    width: 100%;
+}
+.carousel-img{
+    height: 30rem;
+    width: 80%;
+}
+
+.right-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+.carousel-item{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+.caro{
+    padding-top: 2rem   ;
+    background-color: rgb(189, 210, 189);
+}
+.img{
+    background-color: rgb(189, 210, 189);
+}
+.container-fluid{
+    background-color: rgb(189, 210, 189);
+}
+.page-3-in{
+    text-align: center;
+}
+.page-3-text{
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: justify;
+}
+.diposal{
+    height: 8rem;
+    width: 8rem;
+}
+.page-4{
+    padding-bottom: 4rem;
+}
+.end-page{
+    background-image:linear-gradient(rgba(84, 84, 84, 0),rgba(84, 84, 84, 0.502)), url(background-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 30rem;
+    margin-top: 0;  
+}
+.stats{
+    height: 80%;
+    width: 100%;
+}
+.page-5-text{
+    text-align: justify;
+}
+.links{
+    text-align: center;
+    color: aliceblue;
+    padding-top: 2rem;
+}
+.footer-links{
+    color: aliceblue;
+    font-size: larger;
+}
+.socials{
+    text-align: center;
+    display: block;
+    
+}
+.social-icons{
+    padding: 2rem;
+}
+.credit{
+    text-align: center;
+    color: aliceblue;
+}
+.heart{
+    height: 2rem;
+    width: 2rem;
+    margin-bottom: 1rem;
+}
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    border: border-box;
+}
+/* body{
+    background-image: url("bgimg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::before{
+        background-color: rgba(0,0,0,0.8);
+    }
+} */
+body{
+height: 100vh;
+  width: 100%;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  background-image: url('bg2.jpg');
+  background-size: cover;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    /* //background-color: rgba(0,0,0,0.25); */
+    background-color: rgba(0,0,0,0.3);
+  }
+}
+
+.btn1 {
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.btn1:hover {
+  background-color: #2c974b;
+}
+
+.btn1:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.btn1:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.btn1:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+.card{
+    background-color: #CCC8AA;
+    /* box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2); */
+    margin-bottom: 3%;
+    padding-bottom: 5%;
+    /* box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #0b0b0b; */
+  transition: 0.2s ease-in-out;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* transition: 0.3s; */
+}
+.card h4{
+    padding: 10px;
+	font-size: 25px;
+    color:#283331
+}
+
+.container {
+padding: 2px 16px;
+}
