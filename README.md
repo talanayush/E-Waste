@@ -1,8 +1,6 @@
 # E-Waste management
 SIH internal hackathon repository
 
-****NOTE :** Use **landing.html** to start the website.
-
 **Implementation Approach:**
 
 1.	Facility Locator: We will use Bing API to locate nearby e-waste facilities and provide Google Maps links.
