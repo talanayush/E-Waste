@@ -155,9 +155,9 @@ body {
     transition-duration: 1s;
     transition-timing-function: ease;
 }
-.page-3-in:hover{
-    /* transform: scale(1.05); */
-}
+/* .page-3-in:hover{
+    transform: scale(1.05);
+} */
 .page-3-text{
     padding: 1rem;
     padding-left: 2rem;
@@ -185,9 +185,7 @@ img{
     transition-duration: 1s;
     transition-timing-function: linear;
 }
-.tt:hover{
-    /* transform: scale(1.05); */
-}
+
 .end-page{
     background-image:linear-gradient(rgba(84, 84, 84, 0),rgba(84, 84, 84, 0.502)), url(../images/background-image.jpg);
     background-size: cover;

@@ -54,6 +54,11 @@ router.post('/submit', async (req, res) => {
   }
 });
 
+router.get('/contactus', (req, res) => {
+  // Serve the 'dashboard.html' file
+  res.sendFile(path.join(__dirname, '/views/pages/contact.html'));
+});
+
 router.get('/dashboard', (req, res) => {
   // Serve the 'dashboard.html' file
   res.sendFile(path.join(__dirname, '/views/pages/dashboard.html'));

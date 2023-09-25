@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact US</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Add Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body{
+        background-image: linear-gradient(315deg, #004225 0%, #618264 74%);
+        
+    }
+    .contact{
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+    }
+    h1{
+        text-align: center  ;
+        margin-bottom: 2rem;
+    }
+    p{
+        text-align: centers;
+    }
+    .navbar{
+        height: 4rem;
+        background-color: #283331;
+        color: white;
+    }
+    .navbar-nav .nav-link.active,.navbar-nav .nav-link:hover {
+        text-decoration: underline;
+    }
+    .nav-item{
+        padding-left: 3rem;
+        padding-right: 3rem;
+        
+    }
+    .symbol{
+        padding-right: 4px;
+        width: 30px;
+        height: 30px;
+        animation: mymove 5s infinite;
+    }
+    @keyframes mymove{
+        50% {transform: rotate(180deg);}
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img src= "./images/symb3.png" class = "symbol">
+        <a class="navbar-brand" href="/success">E-waste Management</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/success" id="home-link">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                
+              <a class="nav-link" href="/dashboard" id="locate-link"><i class="fa-solid fa-location-dot"></i>  Locate Nearby Center</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile" id="profile-link"><i class="fa-regular fa-user"></i>  Your Profile</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <div class="contact">
+        <div>
+            <h1>Contact Us</h1>
+            <h2>Webmaster,Ministry of Electronics and Information Technology (MeitY)</h2>
+            <p class="text">Electronics Niketan, 6, CGO Complex, Lodhi Road,<br>
+                New Delhi: 110003 <br>
+                Phone No. : 011- 24301851 <br>
+                Fax: +91-11-24364799 <br>
+                E-mail: ewaste[at]meity.gov.in b <br>
+                <br>
+                Web Information Manager <br>
+                Name of the Officer: Dr. S. Chatterjee <br>
+                Designation: Director & Scientist F, MeitY <br>
+                Phone : 011-24363094 <br>
+                Email:sandip[at]gov.in</p>
+        </div>
+    </div>
+</body>
+</html>
