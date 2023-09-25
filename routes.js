@@ -80,6 +80,8 @@ function calculateExpectedPrice(deviceType, deviceYear, mrp) {
   // console.log('Dep rate : ', depreciationRate)
   var prices = depRates[deviceType];
   var expectedPrice = prices['gold'] * 5483 + prices['silver'] * 75.8 + prices['palladium'] * 3418;
+
+  // alert(expectedPrice);
   
   return expectedPrice;
 }
