@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amount Credited</title>
+</head>
+<body>
+    <div id = 'hello'>Hello
+    </div>
+
+    <script>
+        x = document.getElementById('hello');
+
+        function insertData(data) {
+            var divi = document.getElementById('hello');
+            divi.innerHTML = data;
+            // divi.appendChild(outerList); // Add the outer list to the div element.
+            
+        }
+
+        function calculateExpectedPrice(deviceType, deviceYear, mrp) {
+            depRates = {
+                // Gold Silver Palladium
+                "smartphone": {'gold' : 0.034, 'silver' : 0.34, 'palladium' : 0.015},
+                "tv": {'gold' : 0.02, 'silver' : 0.25, 'palladium' : 0.0003},
+                "tablet" : {'gold' : 0.05, 'silver' : 0.4, 'palladium' : 0.005},
+                "refrigerator": {'gold' : 0.01, 'silver' : 0.1, 'palladium' : 0.1},
+                "ac" : {'gold' : 0.15, 'silver' : 0.1, 'palladium' : 0.1},
+                "laptop" : {'gold' : 0.25, 'silver' : 0.1, 'palladium' : 0.1}
+            }
+
+                // const currentYear = new Date().getFullYear();
+                // const age = currentYear - deviceYear;
+                // const depreciationRate = depRates[deviceType];
+                // const expectedPrice = mrp * Math.pow(1 - depreciationRate, age);
+
+                // console.log('Dep rate : ', depreciationRate)
+                var prices = depRates[deviceType];
+                var expectedPrice = prices['gold'] * 5483 + prices['silver'] * 75.8 + prices['palladium'] * 3418;
+                
+                return expectedPrice;
+            }
+
+        function amount() {
+            const collectionCentreUrl = '/expectedPrice';
+
+            fetch(collectionCentreUrl)
+                .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                return response.json();
+                })
+                .then((data) => {
+                insertData(data);
+                console.log('From then', data);
+                })
+                .catch((error) => {
+                console.error('Fetch error:', error);
+                });
+            }
+
+        // amount();
+
+    </script>
+</body>
+</html>

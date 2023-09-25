@@ -63,38 +63,39 @@ function insertIntoTable(data) {
   var divi = document.getElementById('locations');
   divi.innerHTML = "";
   var outerList = document.createElement("ul");
-  outerList.id = "LocationListID";
+  outerList.id = "locationListID";
 
 
   for (var i = 0; i < data.length; i++) {
     var innerList = document.createElement("ul");
-    innerList.id = "locationId" + i;
+    innerList.id = "locationPacket";
 
     var listItem1 = document.createElement("li");
     listItem1.textContent = data[i][0];
-    listItem1.id = "item1_" + i; // Set the id for listItem1
+    listItem1.id = "li"; // Set the id for listItem1
 
     var listItem2 = document.createElement("li");
     listItem2.textContent = data[i][1];
-    listItem2.id = "item2_" + i; // Set the id for listItem2
+    listItem2.id = "li"; // Set the id for listItem2
 
     var listItem3 = document.createElement("li");
     listItem3.textContent = data[i][2];
-    listItem3.id = "item3_" + i; // Set the id for listItem3
+    listItem3.id = "li"; // Set the id for listItem3
 
     var link = document.createElement("a");
     link.href = data[i][3];
     link.textContent = "GMap";
-    link.id = "link_" + i; // Set the id for the link
+    link.id = "li"; // Set the id for the link
 
     var listItem4 = document.createElement("li");
     listItem4.appendChild(link);
-    listItem4.id = "item4_" + i; // Set the id for listItem4
+    listItem4.id = "gmapLink"; // Set the id for listItem4
 
     innerList.appendChild(listItem3);
     innerList.appendChild(listItem1);
     innerList.appendChild(listItem2);
     innerList.appendChild(listItem4);
+    innerList.appendChild(document.createElement('hr'));
     
     // Set an id for the innerList itself if needed
     innerList.id = "innerList_" + i;

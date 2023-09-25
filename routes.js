@@ -61,26 +61,31 @@ router.get('/dashboard', (req, res) => {
 
 function calculateExpectedPrice(deviceType, deviceYear, mrp) {
   depRates = {
-    "smartphone": 0.2,
-    "tv": 0.4,
-    "tablet" : 0.275,
-    "refrigerator": 0.1,
-    "ac" : 0.15,
-    "laptop" : 0.25
+    // Gold Silver Palladium
+    "smartphone": {'gold' : 0.034, 'silver' : 0.34, 'palladium' : 0.015},
+    "tv": {'gold' : 0.02, 'silver' : 0.25, 'palladium' : 0.0003},
+    "tablet" : {'gold' : 0.05, 'silver' : 0.4, 'palladium' : 0.005},
+    "refrigerator": {'gold' : 0.01, 'silver' : 0.1, 'palladium' : 0.1},
+    "ac" : {'gold' : 0.15, 'silver' : 0.1, 'palladium' : 0.1},
+    "laptop" : {'gold' : 0.25, 'silver' : 0.1, 'palladium' : 0.1}
   }
 
-  const currentYear = new Date().getFullYear();
-  const age = currentYear - deviceYear;
-  const depreciationRate = depRates[deviceType];
-  const expectedPrice = mrp * Math.pow(1 - depreciationRate, age);
 
-  console.log('Dep rate : ', depreciationRate)
+
+  // const currentYear = new Date().getFullYear();
+  // const age = currentYear - deviceYear;
+  // const depreciationRate = depRates[deviceType];
+  // const expectedPrice = mrp * Math.pow(1 - depreciationRate, age);
+
+  // console.log('Dep rate : ', depreciationRate)
+  var prices = depRates[deviceType];
+  var expectedPrice = prices['gold'] * 5483 + prices['silver'] * 75.8 + prices['palladium'] * 3418;
   
   return expectedPrice;
 }
 
 router.post('/expectedPrice', async (req, res) => {
-  const modelNo = req.body['modelNo'];
+  const modelNo = req.body['modelNumber'];
   const deviceYear = req.body['deviceYear'];
   const deviceType = req.body['deviceType'];
   const mrp = req.body['mrp'];
@@ -88,7 +93,7 @@ router.post('/expectedPrice', async (req, res) => {
   const expectedPrice = calculateExpectedPrice(deviceType, deviceYear, mrp);
 
   console.log(expectedPrice);
-  res.json({ expectedPrice });
+  res.json( {expectedPrice} );
 });
 
 router.get('/deviceEval', (req, res) => {
@@ -111,6 +116,12 @@ router.get('/success', (req,res) => {
 router.get('/profile', (req,res) => {
   res.sendFile(__dirname + '/views/pages/profile2.html');
 });
+
+
+router.get('/amountCredit', (req,res) => {
+  res.sendFile(__dirname + '/views/pages/expenctedPrice.html');
+});
+
 
 router.post('/login', async (req, res) => {
   const usernameOrEmail = req.body['login-username-email'];
@@ -227,6 +238,7 @@ router.get('/collectionCentres', async (req, res) => {
 });
 // for admin 
 const bodyParser = require('body-parser');
+const { deprecate } = require('util');
 const app= express();
 
 // Serve your HTML file
