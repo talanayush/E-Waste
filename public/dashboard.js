@@ -1,4 +1,4 @@
-var latitude = 28.6;
+var latitude = 0;
 var longitude = 77.3;
 
 userLocation = [latitude, longitude];
@@ -146,8 +146,15 @@ function loadMapScenario() {
 
 function organizeResponseAndPushpin(response){
   var result = [];
+
   for(let a = 0; a < response.length; ++a){
-    result.push([response[a]['lat'], response[a]['long'], response[a]['centre'], response[a]['gmapLink']]);
+    if(latitude == 0){
+      result.push([response[a]['lat'], response[a]['long'], response[a]['centre'], response[a]['gmapLink']]);
+      continue;
+    }
+    if(((response[a]['lat'] - latitude) * (response[a]['lat'] - latitude)) + ((response[a]['long'] - longitude) * (response[a]['long'] - longitude)) < 1){
+      result.push([response[a]['lat'], response[a]['long'], response[a]['centre'], response[a]['gmapLink']]);
+    }
   }
   centreCoordinates = result;
   console.log('From internal : ', result);
