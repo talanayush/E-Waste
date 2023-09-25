@@ -132,37 +132,45 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Calculate Credit Points</button>
                 </form>
-                <div class = "result">
+                <div id = "result">
                 </div>
             </div>
         </div>
     </div>
     <script>
-        // document.getElementById('priceForm').addEventListener('submit', async function(event) {
-        //     event.preventDefault();
-        //     const modelNo = document.getElementById('modelNumber').value;
-        //     const deviceyear = document.getElementById('deviceYear').value;
-        //     const devicetype = document.getElementById('deviceType').value;
-        //     const price = document.getElementById('mrp').value;
+        document.getElementById('priceForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const modelNo = document.getElementById('modelNumber').value;
+            const deviceyear = document.getElementById('deviceYear').value;
+            const devicetype = document.getElementById('deviceType').value;
+            const price = document.getElementById('mrp').value;
 
-        //     depRates = {
-        //      "smartphone": 0.2,
-        //      "tv": 0.4,
-        //      "tablet" : 0.275,
-        //      "refrigerator": 0.1,
-        //      "ac" : 0.15,
-        //     "laptop" : 0.25
-        //      }
 
-        //      const currentYear = new Date().getFullYear();
-        //     const age = currentYear - deviceyear;
-        //     const depreciationRate = depRates[devicetype];
-        //     const expectedPrice = price * Math.pow(1 - depreciationRate, age);
+            depRates = {
+                // Gold Silver Palladium
+                "smartphone": {'gold' : 0.034, 'silver' : 0.34, 'palladium' : 0.015},
+                "tv": {'gold' : 0.02, 'silver' : 0.25, 'palladium' : 0.0003},
+                "tablet" : {'gold' : 0.05, 'silver' : 0.4, 'palladium' : 0.005},
+                "refrigerator": {'gold' : 0.01, 'silver' : 0.1, 'palladium' : 0.1},
+                "ac" : {'gold' : 0.15, 'silver' : 0.1, 'palladium' : 0.1},
+                "laptop" : {'gold' : 0.25, 'silver' : 0.1, 'palladium' : 0.1}
+            }
 
-        //     //console.log(`Dep rate :  ${depreciationRate}`)
-        //      document.getElementById('result').innerHTML = `Expected price is: ${expectedPrice}`;
-        //     // return expectedPrice;
-        // });
+
+
+        // const currentYear = new Date().getFullYear();
+        // const age = currentYear - deviceYear;
+        // const depreciationRate = depRates[deviceType];
+        // const expectedPrice = mrp * Math.pow(1 - depreciationRate, age);
+
+        // console.log('Dep rate : ', depreciationRate)
+            var prices = depRates[devicetype];
+            var expectedPrice = prices['gold'] * 5483 + prices['silver'] * 75.8 + prices['palladium'] * 3418;
+
+            //console.log(`Dep rate :  ${depreciationRate}`)
+             document.getElementById('result').innerHTML = `Expected price is: ${expectedPrice}`;
+            // return expectedPrice;
+        });
     </script>
 </body>
 </html>
